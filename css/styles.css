@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: "Source Sans 3", serif;
+}
+
+body {
+	background-color: #4bb4afa2;
+	width: 100vw;
+	height: 100vh;
+}
+
+header {
+	height: 8rem;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	padding: 1rem;
+	gap: 2rem;
+	background-color: #40a19c;
+}
+
+h1 {
+	margin: 0;
+	grid-column: 2;
+	font-size: 3rem;
+	font-family: "Lexend Deca", serif;
+}
+
+nav {
+	grid-column: 1 / -1;
+	grid-row: 1;
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+h1 {
+	grid-row: 1;
+	z-index: 1;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	font-size: 1.8rem;
+}
+
+svg:active {
+	fill: white;
+}
+
+/*--------------------MAIN-------------------*/
+main {
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+h2 {
+	font-size: 2.2rem;
+	font-weight: 200;
+	margin: 1.5rem 0.5rem;
+	text-align: center;
+}
+
+/*-------------------DROPDOWN-----------------*/
+.dropdown {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	border-top: 1px solid grey;
+}
+
+.lastdropdown {
+	border-bottom: 1px solid grey;
+	padding-bottom: 2rem;
+}
+
+.dropdown-btn {
+	width: 100%;
+	padding: 1.5rem;
+	text-align: left;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: "Source Sans 3", serif;
+	font-size: 1.9rem;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	border: 1px solid #ccc;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	z-index: 5;
+	width: 100%;
+	padding: 2rem;
+	max-height: 300px;
+	overflow: auto;
+}
+
+.dropdown.active .dropdown-content {
+	display: block;
+}
+
+.dropdown-content label {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+	padding: 1rem;
+	border-bottom: 1px solid rgb(212, 212, 212);
+	font-size: 1.8rem;
+}
+
+.dropdown-content input[type="checkbox"] {
+	margin-right: 10px;
+	width: 1.6rem;
+}
+
+#generar-lista {
+	padding: 1.5rem;
+	background-color: #4b9cb4a2;
+	font-size: 1.7rem;
+	font-family: "Source Sans 3", serif;
+	border: none;
+	margin-bottom: 3rem;
+}
+
+#generar-lista:active {
+	background-color: #2d5e6da2;
+}
