@@ -1,973 +1,964 @@
-	<!DOCTYPE html>
-	<html lang="en">
-		<head>
-			<meta charset="UTF-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<title>Mi lista de compra</title>
-			<link rel="stylesheet" href="./css/styles.css" />
-			<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Source+Sans+3:ital@0;1&display=swap" rel="stylesheet"/>
-			<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Source+Sans+3:ital@0;1&display=swap" rel="stylesheet" />
-		</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mi lista de compra</title>
+	<link rel="stylesheet" href="./css/styles.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Source+Sans+3:ital@0;1&display=swap" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Source+Sans+3:ital@0;1&display=swap" rel="stylesheet" />
+</head>
 
-		<body>
-			<header>
-				<h1>Mi compra</h1>
-				<nav>
-					<ul>
-						<li><a href="./productos.html"><svg fill="#000000" width="40px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M30 15.25h-17c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h17c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM13 5.75h17c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0h-17c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0zM6 23.25h-2c-1.518 0.002-2.748 1.232-2.75 2.75v2c0.002 1.518 1.232 2.748 2.75 2.75h2c1.518-0.002 2.748-1.232 2.75-2.75v-2c-0.002-1.518-1.232-2.748-2.75-2.75h-0zM7.25 28c-0.001 0.69-0.56 1.249-1.25 1.25h-2c-0.69-0.001-1.249-0.56-1.25-1.25v-2c0.001-0.69 0.56-1.249 1.25-1.25h2c0.69 0.001 1.249 0.56 1.25 1.25v0zM30 26.25h-17c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h17c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM9.446 12.215l-5.472 5.982-1.446-1.437c-0.135-0.13-0.318-0.21-0.521-0.21-0.414 0-0.75 0.336-0.75 0.75 0 0.204 0.082 0.39 0.214 0.525l-0-0 2 1.986 0.015 0.006 0.007 0.015c0.13 0.122 0.306 0.197 0.499 0.197 0.199 0 0.38-0.080 0.512-0.21l-0 0 0.027-0.011 0.005-0.011 0.017-0.012 6-6.559c0.122-0.133 0.196-0.311 0.196-0.506 0-0.414-0.336-0.75-0.75-0.75-0.219 0-0.416 0.094-0.553 0.244l-0.001 0.001zM9.446 1.215l-5.472 5.982-1.446-1.437c-0.135-0.13-0.318-0.21-0.521-0.21-0.414 0-0.75 0.336-0.75 0.75 0 0.204 0.082 0.39 0.214 0.525l-0-0 2 1.987 0.015 0.006 0.007 0.015c0.13 0.122 0.306 0.196 0.499 0.196 0.201 0 0.383-0.081 0.515-0.212l-0 0 0.024-0.010 0.004-0.010 0.017-0.012 6-6.559c0.119-0.132 0.192-0.308 0.192-0.501 0-0.414-0.336-0.75-0.75-0.75-0.217 0-0.412 0.092-0.549 0.239l-0 0z"></path></svg></a></li>
+<body>
+	<header>
+		<h1>Mi compra</h1>
+		<nav>
+			<ul>
+				<li><a href="./productos.html"><svg fill="#000000" width="40px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M30 15.25h-17c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h17c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM13 5.75h17c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0h-17c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0zM6 23.25h-2c-1.518 0.002-2.748 1.232-2.75 2.75v2c0.002 1.518 1.232 2.748 2.75 2.75h2c1.518-0.002 2.748-1.232 2.75-2.75v-2c-0.002-1.518-1.232-2.748-2.75-2.75h-0zM7.25 28c-0.001 0.69-0.56 1.249-1.25 1.25h-2c-0.69-0.001-1.249-0.56-1.25-1.25v-2c0.001-0.69 0.56-1.249 1.25-1.25h2c0.69 0.001 1.249 0.56 1.25 1.25v0zM30 26.25h-17c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h17c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM9.446 12.215l-5.472 5.982-1.446-1.437c-0.135-0.13-0.318-0.21-0.521-0.21-0.414 0-0.75 0.336-0.75 0.75 0 0.204 0.082 0.39 0.214 0.525l-0-0 2 1.986 0.015 0.006 0.007 0.015c0.13 0.122 0.306 0.197 0.499 0.197 0.199 0 0.38-0.080 0.512-0.21l-0 0 0.027-0.011 0.005-0.011 0.017-0.012 6-6.559c0.122-0.133 0.196-0.311 0.196-0.506 0-0.414-0.336-0.75-0.75-0.75-0.219 0-0.416 0.094-0.553 0.244l-0.001 0.001zM9.446 1.215l-5.472 5.982-1.446-1.437c-0.135-0.13-0.318-0.21-0.521-0.21-0.414 0-0.75 0.336-0.75 0.75 0 0.204 0.082 0.39 0.214 0.525l-0-0 2 1.987 0.015 0.006 0.007 0.015c0.13 0.122 0.306 0.196 0.499 0.196 0.201 0 0.383-0.081 0.515-0.212l-0 0 0.024-0.010 0.004-0.010 0.017-0.012 6-6.559c0.119-0.132 0.192-0.308 0.192-0.501 0-0.414-0.336-0.75-0.75-0.75-0.217 0-0.412 0.092-0.549 0.239l-0 0z"></path></svg></a></li>
 
-						<li><a href="./index.html"><svg fill="#000000" width="40px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M30 13.25h-5.572l-5.723-10.606c-0.129-0.236-0.376-0.394-0.66-0.394-0.414 0-0.75 0.336-0.75 0.75 0 0.131 0.033 0.253 0.092 0.36l-0.002-0.004 5.338 9.894h-13.415l5.395-9.891c0.055-0.101 0.087-0.222 0.087-0.35 0-0.414-0.336-0.75-0.75-0.75-0.279 0-0.522 0.152-0.651 0.377l-0.002 0.004-5.787 10.609h-5.6c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h1.389l1.913 14.35c0.050 0.369 0.364 0.65 0.742 0.65 0 0 0 0 0.001 0h20c0.379-0 0.693-0.281 0.744-0.646l0-0.004 1.913-14.35h1.298c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM25.389 28.25h-18.688l-1.8-13.5h22.287zM16.044 17.25h-0.004c0 0 0 0 0 0-0.413 0-0.748 0.334-0.75 0.746v0l-0.035 7c0 0.001 0 0.002 0 0.004 0 0.413 0.334 0.748 0.746 0.75h0.004c0.413-0 0.747-0.334 0.75-0.746v-0l0.035-7c0-0.001 0-0.002 0-0.004 0-0.413-0.334-0.748-0.746-0.75h-0zM11.065 17.25h-0.004c0 0 0 0 0 0-0.413 0-0.748 0.334-0.75 0.746v0l-0.034 7c0 0.001 0 0.002 0 0.004 0 0.413 0.334 0.748 0.746 0.75h0.004c0.413-0 0.747-0.334 0.75-0.746v-0l0.034-7c0-0.001 0-0.002 0-0.004 0-0.413-0.334-0.748-0.746-0.75h-0zM21.016 17.25h-0.004c0 0 0 0 0 0-0.413 0-0.748 0.334-0.75 0.746v0l-0.033 7c0 0.001 0 0.002 0 0.004 0 0.413 0.334 0.748 0.746 0.75h0.004c0.413-0 0.747-0.334 0.75-0.746v-0l0.033-7c0-0.001 0-0.003 0-0.004 0-0.413-0.334-0.748-0.746-0.75h-0z"></path></svg></a></li>
-					</ul>
-				</nav>
-			</header>
+				<li><a href="./index.html"><svg fill="#000000" width="40px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M30 13.25h-5.572l-5.723-10.606c-0.129-0.236-0.376-0.394-0.66-0.394-0.414 0-0.75 0.336-0.75 0.75 0 0.131 0.033 0.253 0.092 0.36l-0.002-0.004 5.338 9.894h-13.415l5.395-9.891c0.055-0.101 0.087-0.222 0.087-0.35 0-0.414-0.336-0.75-0.75-0.75-0.279 0-0.522 0.152-0.651 0.377l-0.002 0.004-5.787 10.609h-5.6c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h1.389l1.913 14.35c0.050 0.369 0.364 0.65 0.742 0.65 0 0 0 0 0.001 0h20c0.379-0 0.693-0.281 0.744-0.646l0-0.004 1.913-14.35h1.298c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM25.389 28.25h-18.688l-1.8-13.5h22.287zM16.044 17.25h-0.004c0 0 0 0 0 0-0.413 0-0.748 0.334-0.75 0.746v0l-0.035 7c0 0.001 0 0.002 0 0.004 0 0.413 0.334 0.748 0.746 0.75h0.004c0.413-0 0.747-0.334 0.75-0.746v-0l0.035-7c0-0.001 0-0.002 0-0.004 0-0.413-0.334-0.748-0.746-0.75h-0zM11.065 17.25h-0.004c0 0 0 0 0 0-0.413 0-0.748 0.334-0.75 0.746v0l-0.034 7c0 0.001 0 0.002 0 0.004 0 0.413 0.334 0.748 0.746 0.75h0.004c0.413-0 0.747-0.334 0.75-0.746v-0l0.034-7c0-0.001 0-0.002 0-0.004 0-0.413-0.334-0.748-0.746-0.75h-0zM21.016 17.25h-0.004c0 0 0 0 0 0-0.413 0-0.748 0.334-0.75 0.746v0l-0.033 7c0 0.001 0 0.002 0 0.004 0 0.413 0.334 0.748 0.746 0.75h0.004c0.413-0 0.747-0.334 0.75-0.746v-0l0.033-7c0-0.001 0-0.003 0-0.004 0-0.413-0.334-0.748-0.746-0.75h-0z"></path></svg></a></li>
+			</ul>
+		</nav>
+	</header>
 
-			<main>
-				<h2>Selecciona tus productos</h2>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🍓 Frutas y verduras <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
+	<main>
+		<h2>Selecciona tus productos</h2>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🍓 Frutas y verduras <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-						<div class="dropdown-content">
-							<label for="aguacate">Aguacate
-								<input type="checkbox" class="producto" id="aguacate" value="aguacate">
-							</label>
-							
-							<label for="apio">Apio
-								<input type="checkbox" class="producto" id="apio" value="apio">
-							</label>
-							
-							<label for="arándano">Arándano
-								<input type="checkbox" class="producto" id="arándano" value="arándano">
-							</label>
-							
-							<label for="batata">Batata
-								<input type="checkbox" class="producto" id="batata" value="batata">
-							</label>
-							
-							<label for="berenjena">Berenjena
-								<input type="checkbox" class="producto" id="berenjena" value="berenjena">
-							</label>
-							
-							<label for="brócoli">Brócoli
-								<input type="checkbox" class="producto" id="brócoli" value="brócoli">
-							</label>
-							
-							<label for="calabacín">Calabacín
-								<input type="checkbox" class="producto" id="calabacín" value="calabacín">
-							</label>
-							
-							<label for="calabaza">Calabaza
-								<input type="checkbox" class="producto" id="calabaza" value="calabaza">
-							</label>
-							
-							<label for="caqui">Caqui
-								<input type="checkbox" class="producto" id="caqui" value="caqui">
-							</label>
-							
-							<label for="castaña">Castaña
-								<input type="checkbox" class="producto" id="castaña" value="castaña">
-							</label>
-							
-							<label for="cebolla">Cebolla
-								<input type="checkbox" class="producto" id="cebolla" value="cebolla">
-							</label>
-							
-							<label for="cereza">Cereza
-								<input type="checkbox" class="producto" id="cereza" value="cereza">
-							</label>
-							
-							<label for="champiñón">Champiñón
-								<input type="checkbox" class="producto" id="champiñón" value="champiñón">
-							</label>
-							
-							<label for="chirimoya">Chirimoya
-								<input type="checkbox" class="producto" id="chirimoya" value="chirimoya">
-							</label>
-							
-							<label for="espárrago">Espárrago
-								<input type="checkbox" class="producto" id="espárrago" value="espárrago">
-							</label>
-							
-							<label for="fresas">Fresas
-								<input type="checkbox" class="producto" id="fresas" value="fresas">
-							</label>
-							
-							<label for="kiwi">Kiwi
-								<input type="checkbox" class="producto" id="kiwi" value="kiwi">
-							</label>
-							
-							<label for="lechuga">Lechuga
-								<input type="checkbox" class="producto" id="lechuga" value="lechuga">
-							</label>
-							
-							<label for="limón">Limón
-								<input type="checkbox" class="producto" id="limón" value="limón">
-							</label>
-							
-							<label for="mandarina">Mandarina
-								<input type="checkbox" class="producto" id="mandarina" value="mandarina">
-							</label>
-							
-							<label for="mango">Mango
-								<input type="checkbox" class="producto" id="mango" value="mango">
-							</label>
-							
-							<label for="manzana">Manzana
-								<input type="checkbox" class="producto" id="manzana" value="manzana">
-							</label>
-							
-							<label for="melocotón">Melocotón
-								<input type="checkbox" class="producto" id="melocotón" value="melocotón">
-							</label>
-							
-							<label for="melón">Melón
-								<input type="checkbox" class="producto" id="melón" value="melón">
-							</label>
-							
-							<label for="naranja">Naranja
-								<input type="checkbox" class="producto" id="naranja" value="naranja">
-							</label>
-							
-							<label for="patata">Patata
-								<input type="checkbox" class="producto" id="patata" value="patata">
-							</label>
-							
-							<label for="pepino">Pepino
-								<input type="checkbox" class="producto" id="pepino" value="pepino">
-							</label>
-							
-							<label for="pera">Pera
-								<input type="checkbox" class="producto" id="pera" value="pera">
-							</label>
-							
-							<label for="piña">Piña
-								<input type="checkbox" class="producto" id="piña" value="piña">
-							</label>
-							
-							<label for="pimiento">Pimiento
-								<input type="checkbox" class="producto" id="pimiento" value="pimiento">
-							</label>
-							
-							<label for="platano">Plátano
-								<input type="checkbox" class="producto" id="platano" value="platano">
-							</label>
-							
-							<label for="puerro">Puerro
-								<input type="checkbox" class="producto" id="puerro" value="puerro">
-							</label>
-							
-							<label for="rábano">Rábano
-								<input type="checkbox" class="producto" id="rábano" value="rábano">
-							</label>
-							
-							<label for="sandía">Sandía
-								<input type="checkbox" class="producto" id="sandía" value="sandía">
-							</label>
-							
-							<label for="tomate">Tomate
-								<input type="checkbox" class="producto" id="tomate" value="tomate">
-							</label>
-							
-							<label for="uvas">Uvas
-								<input type="checkbox" class="producto" id="uvas" value="uvas">
-							</label>
-							
-							<label for="zanahoria">Zanahoria
-								<input type="checkbox" class="producto" id="zanahoria" value="zanahoria">
-							</label>							
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🧂 Aceite, especias y salsas <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
+				<div class="dropdown-content">
+					<label for="aguacate">Aguacate
+						<input type="checkbox" class="producto" id="aguacate" value="Aguacate">
+					</label>
+					
+					<label for="apio">Apio
+						<input type="checkbox" class="producto" id="apio" value="Apio">
+					</label>
+					
+					<label for="arándano">Arándano
+						<input type="checkbox" class="producto" id="arándano" value="Arándano">
+					</label>
+					
+					<label for="batata">Batata
+						<input type="checkbox" class="producto" id="batata" value="Batata">
+					</label>
+					
+					<label for="berenjena">Berenjena
+						<input type="checkbox" class="producto" id="berenjena" value="Berenjena">
+					</label>
+					
+					<label for="brócoli">Brócoli
+						<input type="checkbox" class="producto" id="brócoli" value="Brócoli">
+					</label>
+					
+					<label for="calabacín">Calabacín
+						<input type="checkbox" class="producto" id="calabacín" value="Calabacín">
+					</label>
+					
+					<label for="calabaza">Calabaza
+						<input type="checkbox" class="producto" id="calabaza" value="Calabaza">
+					</label>
+					
+					<label for="caqui">Caqui
+						<input type="checkbox" class="producto" id="caqui" value="Caqui">
+					</label>
+					
+					<label for="castaña">Castaña
+						<input type="checkbox" class="producto" id="castaña" value="Castaña">
+					</label>
+					
+					<label for="cebolla">Cebolla
+						<input type="checkbox" class="producto" id="cebolla" value="Cebolla">
+					</label>
+					
+					<label for="cereza">Cereza
+						<input type="checkbox" class="producto" id="cereza" value="Cereza">
+					</label>
+					
+					<label for="champiñón">Champiñón
+						<input type="checkbox" class="producto" id="champiñón" value="Champiñón">
+					</label>
+					
+					<label for="chirimoya">Chirimoya
+						<input type="checkbox" class="producto" id="chirimoya" value="Chirimoya">
+					</label>
+					
+					<label for="espárrago">Espárrago
+						<input type="checkbox" class="producto" id="espárrago" value="Espárrago">
+					</label>
+					
+					<label for="fresas">Fresas
+						<input type="checkbox" class="producto" id="fresas" value="Fresas">
+					</label>
+					
+					<label for="kiwi">Kiwi
+						<input type="checkbox" class="producto" id="kiwi" value="Kiwi">
+					</label>
+					
+					<label for="lechuga">Lechuga
+						<input type="checkbox" class="producto" id="lechuga" value="Lechuga">
+					</label>
+					
+					<label for="limón">Limón
+						<input type="checkbox" class="producto" id="limón" value="Limón">
+					</label>
+					
+					<label for="mandarina">Mandarina
+						<input type="checkbox" class="producto" id="mandarina" value="Mandarina">
+					</label>
+					
+					<label for="mango">Mango
+						<input type="checkbox" class="producto" id="mango" value="Mango">
+					</label>
+					
+					<label for="manzana">Manzana
+						<input type="checkbox" class="producto" id="manzana" value="Manzana">
+					</label>
+					
+					<label for="melocotón">Melocotón
+						<input type="checkbox" class="producto" id="melocotón" value="Melocotón">
+					</label>
+					
+					<label for="melón">Melón
+						<input type="checkbox" class="producto" id="melón" value="Melón">
+					</label>
+					
+					<label for="naranja">Naranja
+						<input type="checkbox" class="producto" id="naranja" value="Naranja">
+					</label>
+					
+					<label for="patata">Patata
+						<input type="checkbox" class="producto" id="patata" value="Patata">
+					</label>
+					
+					<label for="pepino">Pepino
+						<input type="checkbox" class="producto" id="pepino" value="Pepino">
+					</label>
+					
+					<label for="pera">Pera
+						<input type="checkbox" class="producto" id="pera" value="Pera">
+					</label>
+					
+					<label for="piña">Piña
+						<input type="checkbox" class="producto" id="piña" value="Piña">
+					</label>
+					
+					<label for="pimiento">Pimiento
+						<input type="checkbox" class="producto" id="pimiento" value="Pimiento">
+					</label>
+					
+					<label for="platano">Plátano
+						<input type="checkbox" class="producto" id="platano" value="Plátano">
+					</label>
+					
+					<label for="puerro">Puerro
+						<input type="checkbox" class="producto" id="puerro" value="Puerro">
+					</label>
+					
+					<label for="rábano">Rábano
+						<input type="checkbox" class="producto" id="rábano" value="Rábano">
+					</label>
+					
+					<label for="sandía">Sandía
+						<input type="checkbox" class="producto" id="sandía" value="Sandía">
+					</label>
+					
+					<label for="tomate">Tomate
+						<input type="checkbox" class="producto" id="tomate" value="Tomate">
+					</label>
+					
+					<label for="uvas">Uvas
+						<input type="checkbox" class="producto" id="uvas" value="Uvas">
+					</label>
+					
+					<label for="zanahoria">Zanahoria
+						<input type="checkbox" class="producto" id="zanahoria" value="Zanahoria">
+					</label>										
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🧂 Aceite, especias y salsas <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-						<div class="dropdown-content">
-							<label for="aceite">Aceite
-								<input type="checkbox" class="producto" id="aceite" value="aceite">
-							</label>
-							
-							<label for="ajo-polvo">Ajo en polvo
-								<input type="checkbox" class="producto" id="ajo-polvo" value="ajo-polvo">
-							</label>
-							
-							<label for="azafran">Azafrán
-								<input type="checkbox" class="producto" id="azafran" value="azafran">
-							</label>
-							
-							<label for="barbacoa">Barbacoa
-								<input type="checkbox" class="producto" id="barbacoa" value="barbacoa">
-							</label>
-							
-							<label for="canela">Canela
-								<input type="checkbox" class="producto" id="canela" value="canela">
-							</label>
-							
-							<label for="comino">Comino
-								<input type="checkbox" class="producto" id="comino" value="comino">
-							</label>
-							
-							<label for="curcuma">Cúrcuma
-								<input type="checkbox" class="producto" id="curcuma" value="curcuma">
-							</label>
-							
-							<label for="curry">Curry
-								<input type="checkbox" class="producto" id="curry" value="curry">
-							</label>
-							
-							<label for="guacamole">Guacamole
-								<input type="checkbox" class="producto" id="guacamole" value="guacamole">
-							</label>
-							
-							<label for="ketchup">Ketchup
-								<input type="checkbox" class="producto" id="ketchup" value="ketchup">
-							</label>
-							
-							<label for="mayonesa">Mayonesa
-								<input type="checkbox" class="producto" id="mayonesa" value="mayonesa">
-							</label>
-							
-							<label for="mostaza">Mostaza
-								<input type="checkbox" class="producto" id="mostaza" value="mostaza">
-							</label>
-							
-							<label for="nuez-moscada">Nuez moscada
-								<input type="checkbox" class="producto" id="nuez-moscada" value="nuez-moscada">
-							</label>
-							
-							<label for="pimenton-dulce">Pimentón dulce
-								<input type="checkbox" class="producto" id="pimenton-dulce" value="pimenton-dulce">
-							</label>
-							
-							<label for="pimienta-negra">Pimienta negra
-								<input type="checkbox" class="producto" id="pimienta-negra" value="pimienta-negra">
-							</label>
-							
-							<label for="romero">Romero
-								<input type="checkbox" class="producto" id="romero" value="romero">
-							</label>
-							
-							<label for="sal">Sal
-								<input type="checkbox" class="producto" id="sal" value="sal">
-							</label>
-							
-							<label for="salsa-rosa">Salsa rosa
-								<input type="checkbox" class="producto" id="salsa-rosa" value="salsa-rosa">
-							</label>
-							
-							<label for="soja">Soja
-								<input type="checkbox" class="producto" id="soja" value="soja">
-							</label>
-							
-							<label for="teriyaki">Teriyaki
-								<input type="checkbox" class="producto" id="teriyaki" value="teriyaki">
-							</label>
-							
-							<label for="tomate-frito">Tomate frito
-								<input type="checkbox" class="producto" id="tomate-frito" value="tomate-frito">
-							</label>
-							
-							<label for="tomillo">Tomillo
-								<input type="checkbox" class="producto" id="tomillo" value="tomillo">
-							</label>
-							
-							<label for="vinagre">Vinagre
-								<input type="checkbox" class="producto" id="vinagre" value="vinagre">
-							</label>				
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🍹 Agua, refrescos, alcohol, café, cacao y té <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
+				<div class="dropdown-content">
+					<label for="aceite">Aceite
+						<input type="checkbox" class="producto" id="aceite" value="Aceite">
+					</label>
+					
+					<label for="ajo-polvo">Ajo en polvo
+						<input type="checkbox" class="producto" id="ajo-polvo" value="Ajo en polvo">
+					</label>
+					
+					<label for="azafran">Azafrán
+						<input type="checkbox" class="producto" id="azafran" value="Azafrán">
+					</label>
+					
+					<label for="barbacoa">Barbacoa
+						<input type="checkbox" class="producto" id="barbacoa" value="Barbacoa">
+					</label>
+					
+					<label for="canela">Canela
+						<input type="checkbox" class="producto" id="canela" value="Canela">
+					</label>
+					
+					<label for="comino">Comino
+						<input type="checkbox" class="producto" id="comino" value="Comino">
+					</label>
+					
+					<label for="curcuma">Cúrcuma
+						<input type="checkbox" class="producto" id="curcuma" value="Cúrcuma">
+					</label>
+					
+					<label for="curry">Curry
+						<input type="checkbox" class="producto" id="curry" value="Curry">
+					</label>
+					
+					<label for="guacamole">Guacamole
+						<input type="checkbox" class="producto" id="guacamole" value="Guacamole">
+					</label>
+					
+					<label for="ketchup">Ketchup
+						<input type="checkbox" class="producto" id="ketchup" value="Ketchup">
+					</label>
+					
+					<label for="mayonesa">Mayonesa
+						<input type="checkbox" class="producto" id="mayonesa" value="Mayonesa">
+					</label>
+					
+					<label for="mostaza">Mostaza
+						<input type="checkbox" class="producto" id="mostaza" value="Mostaza">
+					</label>
+					
+					<label for="nuez-moscada">Nuez moscada
+						<input type="checkbox" class="producto" id="nuez-moscada" value="Nuez moscada">
+					</label>
+					
+					<label for="pimenton-dulce">Pimentón dulce
+						<input type="checkbox" class="producto" id="pimenton-dulce" value="Pimentón dulce">
+					</label>
+					
+					<label for="pimienta-negra">Pimienta negra
+						<input type="checkbox" class="producto" id="pimienta-negra" value="Pimienta negra">
+					</label>
+					
+					<label for="romero">Romero
+						<input type="checkbox" class="producto" id="romero" value="Romero">
+					</label>
+					
+					<label for="sal">Sal
+						<input type="checkbox" class="producto" id="sal" value="Sal">
+					</label>
+					
+					<label for="salsa-rosa">Salsa rosa
+						<input type="checkbox" class="producto" id="salsa-rosa" value="Salsa rosa">
+					</label>
+					
+					<label for="soja">Soja
+						<input type="checkbox" class="producto" id="soja" value="Soja">
+					</label>
+					
+					<label for="teriyaki">Teriyaki
+						<input type="checkbox" class="producto" id="teriyaki" value="Teriyaki">
+					</label>
+					
+					<label for="tomate-frito">Tomate frito
+						<input type="checkbox" class="producto" id="tomate-frito" value="Tomate frito">
+					</label>
+					
+					<label for="tomillo">Tomillo
+						<input type="checkbox" class="producto" id="tomillo" value="Tomillo">
+					</label>
+					
+					<label for="vinagre">Vinagre
+						<input type="checkbox" class="producto" id="vinagre" value="Vinagre">
+					</label>									
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🍹 Agua, refrescos, alcohol, café, cacao y té <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-						<div class="dropdown-content">
-							<label for="agua">Agua
-								<input type="checkbox" class="producto" id="agua" value="agua">
-							</label>
-							
-							<label for="cacao-polvo">Cacao en polvo
-								<input type="checkbox" class="producto" id="cacao-polvo" value="cacao-polvo">
-							</label>
-							
-							<label for="cacaoinstant">CacaoInstant
-								<input type="checkbox" class="producto" id="cacaoinstant" value="cacaoinstant">
-							</label>
-							
-							<label for="cafe">Café
-								<input type="checkbox" class="producto" id="cafe" value="cafe">
-							</label>
-							
-							<label for="cafe-des">Café descafeinado
-								<input type="checkbox" class="producto" id="cafe-des" value="cafe-des">
-							</label>
-							
-							<label for="capuchino">Capuchino
-								<input type="checkbox" class="producto" id="capuchino" value="capuchino">
-							</label>
-							
-							<label for="cerveza">Cerveza
-								<input type="checkbox" class="producto" id="cerveza" value="cerveza">
-							</label>
-							
-							<label for="don-simon">Don Simón
-								<input type="checkbox" class="producto" id="don-simon" value="don-simon">
-							</label>
-							
-							<label for="fanta">Fanta
-								<input type="checkbox" class="producto" id="fanta" value="fanta">
-							</label>
-							
-							<label for="gaseosa">Gaseosa
-								<input type="checkbox" class="producto" id="gaseosa" value="gaseosa">
-							</label>
-							
-							<label for="infusion">Infusión
-								<input type="checkbox" class="producto" id="infusion" value="infusion">
-							</label>
-							
-							<label for="lima-limon">Lima-limón
-								<input type="checkbox" class="producto" id="lima-limon" value="lima-limon">
-							</label>
+				<div class="dropdown-content">
+					<label for="agua">Agua
+						<input type="checkbox" class="producto" id="agua" value="Agua">
+					</label>
+					
+					<label for="cacao-polvo">Cacao en polvo
+						<input type="checkbox" class="producto" id="cacao-polvo" value="Cacao en polvo">
+					</label>
+					
+					<label for="cacaoinstant">CacaoInstant
+						<input type="checkbox" class="producto" id="cacaoinstant" value="CacaoInstant">
+					</label>
+					
+					<label for="cafe">Café
+						<input type="checkbox" class="producto" id="cafe" value="Café">
+					</label>
+					
+					<label for="cafe-des">Café descafeinado
+						<input type="checkbox" class="producto" id="cafe-des" value="Café descafeinado">
+					</label>
+					
+					<label for="capuchino">Capuchino
+						<input type="checkbox" class="producto" id="capuchino" value="Capuchino">
+					</label>
+					
+					<label for="cerveza">Cerveza
+						<input type="checkbox" class="producto" id="cerveza" value="Cerveza">
+					</label>
+					
+					<label for="don-simon">Don Simón
+						<input type="checkbox" class="producto" id="don-simon" value="Don Simón">
+					</label>
+					
+					<label for="fanta">Fanta
+						<input type="checkbox" class="producto" id="fanta" value="Fanta">
+					</label>
+					
+					<label for="gaseosa">Gaseosa
+						<input type="checkbox" class="producto" id="gaseosa" value="Gaseosa">
+					</label>
+					
+					<label for="infusion">Infusión
+						<input type="checkbox" class="producto" id="infusion" value="Infusión">
+					</label>
+					
+					<label for="lima-limon">Lima-limón
+						<input type="checkbox" class="producto" id="lima-limon" value="Lima-limón">
+					</label>
+					
+					<label for="shandy">Shandy
+						<input type="checkbox" class="producto" id="shandy" value="Shandy">
+					</label>
+					
+					<label for="tinto">Tinto
+						<input type="checkbox" class="producto" id="tinto" value="Tinto">
+					</label>
+					
+					<label for="vino">Vino
+						<input type="checkbox" class="producto" id="vino" value="Vino">
+					</label>
+					
+					<label for="zumo">Zumo
+						<input type="checkbox" class="producto" id="zumo" value="Zumo">
+					</label>						
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🥯 Picoteo <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-							<label for="shandy">Shandy
-								<input type="checkbox" class="producto" id="shandy" value="shandy">
-							</label>
+				<div class="dropdown-content">
+					<label for="aceitunas">Aceitunas
+						<input type="checkbox" class="producto" id="aceitunas" value="Aceitunas">
+					</label>
+					
+					<label for="frutos-secos">Frutos secos
+						<input type="checkbox" class="producto" id="frutos-secos" value="Frutos secos">
+					</label>
+					
+					<label for="patatas-fritas">Patatas fritas
+						<input type="checkbox" class="producto" id="patatas-fritas" value="Patatas fritas">
+					</label>
+					
+					<label for="pepinillos">Pepinillos
+						<input type="checkbox" class="producto" id="pepinillos" value="Pepinillos">
+					</label>
+					
+					<label for="picatostes">Picatostes
+						<input type="checkbox" class="producto" id="picatostes" value="Picatostes">
+					</label>
+					
+					<label for="regañá">Regañá
+						<input type="checkbox" class="producto" id="regañá" value="Regañá">
+					</label>
+					
+					<label for="toreras">Toreras
+						<input type="checkbox" class="producto" id="toreras" value="Toreras">
+					</label>
+					
+					<label for="tostes">Tostes
+						<input type="checkbox" class="producto" id="tostes" value="Tostes">
+					</label>													
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🍝 Arroz, legumbres y pasta <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-							<label for="tinto">Tinto
-								<input type="checkbox" class="producto" id="tinto" value="tinto">
-							</label>
+				<div class="dropdown-content">
+					<label for="arroz">Arroz
+						<input type="checkbox" class="producto" id="arroz" value="Arroz">
+					</label>
+					
+					<label for="estrellitas">Estrellitas
+						<input type="checkbox" class="producto" id="estrellitas" value="Estrellitas">
+					</label>
+					
+					<label for="fideos">Fideos
+						<input type="checkbox" class="producto" id="fideos" value="Fideos">
+					</label>
+					
+					<label for="garbanzos">Garbanzos
+						<input type="checkbox" class="producto" id="garbanzos" value="Garbanzos">
+					</label>
+					
+					<label for="habichuelas">Habichuelas
+						<input type="checkbox" class="producto" id="habichuelas" value="Habichuelas">
+					</label>
+					
+					<label for="lasaña">Lasaña
+						<input type="checkbox" class="producto" id="lasaña" value="Lasaña">
+					</label>
+					
+					<label for="lazos">Lazos
+						<input type="checkbox" class="producto" id="lazos" value="Lazos">
+					</label>
+					
+					<label for="lentejas">Lentejas
+						<input type="checkbox" class="producto" id="lentejas" value="Lentejas">
+					</label>
+					
+					<label for="macarrones">Macarrones
+						<input type="checkbox" class="producto" id="macarrones" value="Macarrones">
+					</label>
+					
+					<label for="spaguettis">Spaguettis
+						<input type="checkbox" class="producto" id="spaguettis" value="Spaguettis">
+					</label>
+					
+					<label for="tortellini">Tortellini
+						<input type="checkbox" class="producto" id="tortellini" value="Tortellini">
+					</label>											
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🧀 Embutidos y quesos <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-							<label for="vino">Vino
-								<input type="checkbox" class="producto" id="vino" value="vino">
-							</label>
+				<div class="dropdown-content">
+					<label for="bacon">Bacon
+						<input type="checkbox" class="producto" id="bacon" value="Bacon">
+					</label>
+					
+					<label for="chorizo">Chorizo
+						<input type="checkbox" class="producto" id="chorizo" value="Chorizo">
+					</label>
+					
+					<label for="jamon">Jamón
+						<input type="checkbox" class="producto" id="jamon" value="Jamón">
+					</label>
+					
+					<label for="mortadela">Mortadela
+						<input type="checkbox" class="producto" id="mortadela" value="Mortadela">
+					</label>
+					
+					<label for="pate">Paté
+						<input type="checkbox" class="producto" id="pate" value="Paté">
+					</label>
+					
+					<label for="pavo">Pavo
+						<input type="checkbox" class="producto" id="pavo" value="Pavo">
+					</label>
+					
+					<label for="philadelphia">Philadelphia
+						<input type="checkbox" class="producto" id="philadelphia" value="Philadelphia">
+					</label>
+					
+					<label for="queso-curado">Queso curado
+						<input type="checkbox" class="producto" id="queso-curado" value="Queso curado">
+					</label>
+					
+					<label for="queso-fresco">Queso fresco
+						<input type="checkbox" class="producto" id="queso-fresco" value="Queso fresco">
+					</label>
+					
+					<label for="queso-loncha">Queso loncha
+						<input type="checkbox" class="producto" id="queso-loncha" value="Queso loncha">
+					</label>
+					
+					<label for="queso-rallado">Queso rallado
+						<input type="checkbox" class="producto" id="queso-rallado" value="Queso rallado">
+					</label>
+					
+					<label for="queso-semi">Queso semi
+						<input type="checkbox" class="producto" id="queso-semi" value="Queso semi">
+					</label>
+					
+					<label for="salami">Salami
+						<input type="checkbox" class="producto" id="salami" value="Salami">
+					</label>
+					
+					<label for="salchichas">Salchichas
+						<input type="checkbox" class="producto" id="salchichas" value="Salchichas">
+					</label>
+					
+					<label for="salchichon">Salchichón
+						<input type="checkbox" class="producto" id="salchichon" value="Salchichón">
+					</label>
+					
+					<label for="sobrasada">Sobrasada
+						<input type="checkbox" class="producto" id="sobrasada" value="Sobrasada">
+					</label>
+					
+					<label for="york">York
+						<input type="checkbox" class="producto" id="york" value="York">
+					</label>						
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🥩 Carne <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-							<label for="zumo">Zumo
-								<input type="checkbox" class="producto" id="zumo" value="zumo">
-							</label>	
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🥯 Picoteo <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
+				<div class="dropdown-content">
+					<label for="carne-picada-cerdo">Carne picada cerdo
+						<input type="checkbox" class="producto" id="carne-picada-cerdo" value="Carne picada cerdo">
+					</label>
+					
+					<label for="carne-picada-pollo">Carne picada pollo
+						<input type="checkbox" class="producto" id="carne-picada-pollo" value="Carne picada pollo">
+					</label>
+					
+					<label for="filete-cerdo">Filetes lomo de cerdo
+						<input type="checkbox" class="producto" id="filete-cerdo" value="Filetes lomo de cerdo">
+					</label>
+					
+					<label for="filete-pollo">Filetes de pollo
+						<input type="checkbox" class="producto" id="filete-pollo" value="Filetes de pollo">
+					</label>
+					
+					<label for="medallones">Medallones
+						<input type="checkbox" class="producto" id="medallones" value="Medallones">
+					</label>
+					
+					<label for="pechuga-pollo">Pechugas de pollo
+						<input type="checkbox" class="producto" id="pechuga-pollo" value="Pechugas de pollo">
+					</label>
+					
+					<label for="pollo">Pollo
+						<input type="checkbox" class="producto" id="pollo" value="Pollo">
+					</label>											
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🦐 Pescado, marisco y conservas <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-						<div class="dropdown-content">
-							<label for="aceitunas">Aceitunas
-								<input type="checkbox" class="producto" id="aceitunas" value="aceitunas">
-							</label>
-							
-							<label for="frutos-secos">Frutos secos
-								<input type="checkbox" class="producto" id="frutos-secos" value="frutos-secos">
-							</label>
-							
-							<label for="patatas-fritas">Patatas fritas
-								<input type="checkbox" class="producto" id="patatas-fritas" value="patatas-fritas">
-							</label>
-							
-							<label for="pepinillos">Pepinillos
-								<input type="checkbox" class="producto" id="pepinillos" value="pepinillos">
-							</label>
-							
-							<label for="picatostes">Picatostes
-								<input type="checkbox" class="producto" id="picatostes" value="picatostes">
-							</label>
-							
-							<label for="regañá">Regañá
-								<input type="checkbox" class="producto" id="regañá" value="regañá">
-							</label>
-							
-							<label for="toreras">Toreras
-								<input type="checkbox" class="producto" id="toreras" value="toreras">
-							</label>
-							
-							<label for="tostes">Tostes
-								<input type="checkbox" class="producto" id="tostes" value="tostes">
-							</label>								
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🍝 Arroz, legumbres y pasta <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
+				<div class="dropdown-content">
+					<label for="almejas">Almejas
+						<input type="checkbox" class="producto" id="almejas" value="Almejas">
+					</label>
+					
+					<label for="avecrem">Avecrem
+						<input type="checkbox" class="producto" id="avecrem" value="Avecrem">
+					</label>
+					
+					<label for="atun">Atún
+						<input type="checkbox" class="producto" id="atun" value="Atún">
+					</label>
+					
+					<label for="bacalao">Bacalao
+						<input type="checkbox" class="producto" id="bacalao" value="Bacalao">
+					</label>
+					
+					<label for="boquerones">Boquerones
+						<input type="checkbox" class="producto" id="boquerones" value="Boquerones">
+					</label>
+					
+					<label for="calamar">Calamar
+						<input type="checkbox" class="producto" id="calamar" value="Calamar">
+					</label>
+					
+					<label for="dorada">Dorada
+						<input type="checkbox" class="producto" id="dorada" value="Dorada">
+					</label>
+					
+					<label for="gamba">Gamba
+						<input type="checkbox" class="producto" id="gamba" value="Gamba">
+					</label>
+					
+					<label for="gulas">Gulas
+						<input type="checkbox" class="producto" id="gulas" value="Gulas">
+					</label>
+					
+					<label for="mejillon">Mejillones
+						<input type="checkbox" class="producto" id="mejillon" value="Mejillones">
+					</label>
+					
+					<label for="maiz">Maiz
+						<input type="checkbox" class="producto" id="maiz" value="Maiz">
+					</label>
+					
+					<label for="merluza">Merluza
+						<input type="checkbox" class="producto" id="merluza" value="Merluza">
+					</label>
+					
+					<label for="muslito-surimi">Muslito surimi
+						<input type="checkbox" class="producto" id="muslito-surimi" value="Muslito surimi">
+					</label>
+					
+					<label for="prep-paella">Preparado paella
+						<input type="checkbox" class="producto" id="prep-paella" value="Preparado paella">
+					</label>
+					
+					<label for="pulpo">Pulpo
+						<input type="checkbox" class="producto" id="pulpo" value="Pulpo">
+					</label>
+					
+					<label for="surimi">Palito de mar
+						<input type="checkbox" class="producto" id="surimi" value="Palito de mar">
+					</label>
+					
+					<label for="salmon">Salmón
+						<input type="checkbox" class="producto" id="salmon" value="Salmón">
+					</label>
+					
+					<label for="sopa-sobre">Sopa sobre
+						<input type="checkbox" class="producto" id="sopa-sobre" value="Sopa sobre">
+					</label>
+					
+					<label for="sardina">Sardina
+						<input type="checkbox" class="producto" id="sardina" value="Sardina">
+					</label>
+					
+					<label for="sepia">Sepia
+						<input type="checkbox" class="producto" id="sepia" value="Sepia">
+					</label>											
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🥐 Panadería, pastelería, cereales y galletas <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-						<div class="dropdown-content">
-							<label for="arroz">Arroz
-								<input type="checkbox" class="producto" id="arroz" value="arroz">
-							</label>
-							
-							<label for="estrellitas">Estrellitas
-								<input type="checkbox" class="producto" id="estrellitas" value="estrellitas">
-							</label>
-							
-							<label for="fideos">Fideos
-								<input type="checkbox" class="producto" id="fideos" value="fideos">
-							</label>
-							
-							<label for="garbanzos">Garbanzos
-								<input type="checkbox" class="producto" id="garbanzos" value="garbanzos">
-							</label>
-							
-							<label for="habichuelas">Habichuelas
-								<input type="checkbox" class="producto" id="habichuelas" value="habichuelas">
-							</label>
-							
-							<label for="lasaña">Lasaña
-								<input type="checkbox" class="producto" id="lasaña" value="lasaña">
-							</label>
-							
-							<label for="lazos">Lazos
-								<input type="checkbox" class="producto" id="lazos" value="lazos">
-							</label>
-							
-							<label for="lentejas">Lentejas
-								<input type="checkbox" class="producto" id="lentejas" value="lentejas">
-							</label>
-							
-							<label for="macarrones">Macarrones
-								<input type="checkbox" class="producto" id="macarrones" value="macarrones">
-							</label>
-							
-							<label for="spaguettis">Spaguettis
-								<input type="checkbox" class="producto" id="spaguettis" value="spaguettis">
-							</label>
-							
-							<label for="tortellini">Tortellini
-								<input type="checkbox" class="producto" id="tortellini" value="tortellini">
-							</label>						
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🧀 Embutidos y quesos <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
+				<div class="dropdown-content">
+					<label for="azucar">Azúcar
+						<input type="checkbox" class="producto" id="azucar" value="Azúcar">
+					</label>
+					
+					<label for="avena">Avena
+						<input type="checkbox" class="producto" id="avena" value="Avena">
+					</label>
+					
+					<label for="bimbo">Bimbo
+						<input type="checkbox" class="producto" id="bimbo" value="Bimbo">
+					</label>
+					
+					<label for="bizcocho">Bizcocho
+						<input type="checkbox" class="producto" id="bizcocho" value="Bizcocho">
+					</label>
+					
+					<label for="burrito">Tortilla burrito
+						<input type="checkbox" class="producto" id="burrito" value="Tortilla burrito">
+					</label>
+					
+					<label for="cereales">Cereales
+						<input type="checkbox" class="producto" id="cereales" value="Cereales">
+					</label>
+					
+					<label for="choco-fundir">Chocolate fundir
+						<input type="checkbox" class="producto" id="choco-fundir" value="Chocolate fundir">
+					</label>
+					
+					<label for="coco-rallado">Coco rallado
+						<input type="checkbox" class="producto" id="coco-rallado" value="Coco rallado">
+					</label>
+					
+					<label for="empanadilla">Empanadilla
+						<input type="checkbox" class="producto" id="empanadilla" value="Empanadilla">
+					</label>
+					
+					<label for="flan">Flan
+						<input type="checkbox" class="producto" id="flan" value="Flan">
+					</label>
+					
+					<label for="galletas">Galletas
+						<input type="checkbox" class="producto" id="galletas" value="Galletas">
+					</label>
+					
+					<label for="harina">Harina
+						<input type="checkbox" class="producto" id="harina" value="Harina">
+					</label>
+					
+					<label for="harina-fritos">Harina fritos
+						<input type="checkbox" class="producto" id="harina-fritos" value="Harina fritos">
+					</label>
+					
+					<label for="levadura">Levadura
+						<input type="checkbox" class="producto" id="levadura" value="Levadura">
+					</label>
+					
+					<label for="maizena">Maizena
+						<input type="checkbox" class="producto" id="maizena" value="Maizena">
+					</label>
+					
+					<label for="miel">Miel
+						<input type="checkbox" class="producto" id="miel" value="Miel">
+					</label>
+					
+					<label for="pan">Pan
+						<input type="checkbox" class="producto" id="pan" value="Pan">
+					</label>
+					
+					<label for="pizza">Pizza
+						<input type="checkbox" class="producto" id="pizza" value="Pizza">
+					</label>
+					
+					<label for="palmeritas">Palmeritas
+						<input type="checkbox" class="producto" id="palmeritas" value="Palmeritas">
+					</label>
+					
+					<label for="pastas">Pastas
+						<input type="checkbox" class="producto" id="pastas" value="Pastas">
+					</label>
+					
+					<label for="rallado">Pan rallado
+						<input type="checkbox" class="producto" id="rallado" value="Pan rallado">
+					</label>
+					
+					<label for="saladitos">Saladitos
+						<input type="checkbox" class="producto" id="saladitos" value="Saladitos">
+					</label>
+					
+					<label for="vainilla">Aroma vainilla
+						<input type="checkbox" class="producto" id="vainilla" value="Aroma vainilla">
+					</label>											
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🍮 Yogures, helado, huevos, leche y mantequilla <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-						<div class="dropdown-content">
-							<label for="bacon">Bacon
-								<input type="checkbox" class="producto" id="bacon" value="bacon">
-							</label>
-							
-							<label for="chorizo">Chorizo
-								<input type="checkbox" class="producto" id="chorizo" value="chorizo">
-							</label>
-							
-							<label for="jamon">Jamón
-								<input type="checkbox" class="producto" id="jamon" value="jamon">
-							</label>
-							
-							<label for="mortadela">Mortadela
-								<input type="checkbox" class="producto" id="mortadela" value="mortadela">
-							</label>
-							
-							<label for="pate">Paté
-								<input type="checkbox" class="producto" id="pate" value="pate">
-							</label>
-							
-							<label for="pavo">Pavo
-								<input type="checkbox" class="producto" id="pavo" value="pavo">
-							</label>
-							
-							<label for="philadelphia">Philadelphia
-								<input type="checkbox" class="producto" id="philadelphia" value="philadelphia">
-							</label>
-							
-							<label for="queso-curado">Queso curado
-								<input type="checkbox" class="producto" id="queso-curado" value="queso-curado">
-							</label>
-							
-							<label for="queso-fresco">Queso fresco
-								<input type="checkbox" class="producto" id="queso-fresco" value="queso-fresco">
-							</label>
-							
-							<label for="queso-loncha">Queso loncha
-								<input type="checkbox" class="producto" id="queso-loncha" value="queso-loncha">
-							</label>
-							
-							<label for="queso-rallado">Queso rallado
-								<input type="checkbox" class="producto" id="queso-rallado" value="queso-rallado">
-							</label>
-							
-							<label for="queso-semi">Queso semi
-								<input type="checkbox" class="producto" id="queso-semi" value="queso-semi">
-							</label>
-							
-							<label for="salami">Salami
-								<input type="checkbox" class="producto" id="salami" value="salami">
-							</label>
-							
-							<label for="salchichas">Salchichas
-								<input type="checkbox" class="producto" id="salchichas" value="salchichas">
-							</label>
-							
-							<label for="salchichon">Salchichón
-								<input type="checkbox" class="producto" id="salchichon" value="salchichon">
-							</label>
-							
-							<label for="sobrasada">Sobrasada
-								<input type="checkbox" class="producto" id="sobrasada" value="sobrasada">
-							</label>
-							
-							<label for="york">York
-								<input type="checkbox" class="producto" id="york" value="york">
-							</label>	
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🥩 Carne <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
+				<div class="dropdown-content">
+					<label for="bifidus">Bifidus
+						<input type="checkbox" class="producto" id="bifidus" value="Bifidus">
+					</label>
+					
+					<label for="desnatado">Desnatado
+						<input type="checkbox" class="producto" id="desnatado" value="Desnatado">
+					</label>
+					
+					<label for="flan-danone">Flan
+						<input type="checkbox" class="producto" id="flan-danone" value="Flan">
+					</label>
+					
+					<label for="gelatina">Gelatina
+						<input type="checkbox" class="producto" id="gelatina" value="Gelatina">
+					</label>
+					
+					<label for="griego">Griego
+						<input type="checkbox" class="producto" id="griego" value="Griego">
+					</label>
+					
+					<label for="helado">Helado
+						<input type="checkbox" class="producto" id="helado" value="Helado">
+					</label>
 
-						<div class="dropdown-content">
-							<label for="carne-picada-cerdo">Carne picada cerdo
-								<input type="checkbox" class="producto" id="carne-picada-cerdo" value="carne-picada-cerdo">
-							</label>
-							
-							<label for="carne-picada-pollo">Carne picada pollo
-								<input type="checkbox" class="producto" id="carne-picada-pollo" value="carne-picada-pollo">
-							</label>
-							
-							<label for="filete-cerdo">Filetes lomo de cerdo
-								<input type="checkbox" class="producto" id="filete-cerdo" value="filete-cerdo">
-							</label>
-							
-							<label for="filete-pollo">Filetes de pollo
-								<input type="checkbox" class="producto" id="filete-pollo" value="filete-pollo">
-							</label>
-							
-							<label for="medallones">Medallones
-								<input type="checkbox" class="producto" id="medallones" value="medallones">
-							</label>
-							
-							<label for="pechuga-pollo">Pechugas de pollo
-								<input type="checkbox" class="producto" id="pechuga-pollo" value="pechuga-pollo">
-							</label>
-							
-							<label for="pollo">Pollo
-								<input type="checkbox" class="producto" id="pollo" value="pollo">
-							</label>						
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🦐 Pescado, marisco y conservas <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
+					<label for="huevos">Huevos
+						<input type="checkbox" class="producto" id="huevos" value="Huevos">
+					</label>
+					
+					<label for="leche">Leche
+						<input type="checkbox" class="producto" id="leche" value="Leche">
+					</label>
+					
+					<label for="mantequilla">Mantequilla
+						<input type="checkbox" class="producto" id="mantequilla" value="Mantequilla">
+					</label>
+					
+					<label for="muesli">Muesli
+						<input type="checkbox" class="producto" id="muesli" value="Muesli">
+					</label>
+					
+					<label for="natural">Natural
+						<input type="checkbox" class="producto" id="natural" value="Natural">
+					</label>
+					
+					<label for="natillas">Natillas
+						<input type="checkbox" class="producto" id="natillas" value="Natillas">
+					</label>
+					
+					<label for="panacota">Pannacotta
+						<input type="checkbox" class="producto" id="panacota" value="Pannacotta">
+					</label>
+					
+					<label for="yogur-batido">Yogur batido
+						<input type="checkbox" class="producto" id="yogur-batido" value="Yogur batido">
+					</label>
+					
+					<label for="yogur-sabores">Yogur sabores
+						<input type="checkbox" class="producto" id="yogur-sabores" value="Yogur sabores">
+					</label>											
+				</div>
+		</section> 
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">🧹 Limpieza <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-						<div class="dropdown-content">
-							<label for="almejas">Almejas
-								<input type="checkbox" class="producto" id="almejas" value="almejas">
-							</label>
+				<div class="dropdown-content">
+					<label for="ambientador">Ambientador
+						<input type="checkbox" class="producto" id="ambientador" value="Ambientador">
+					</label>
+					
+					<label for="antical">Antical
+						<input type="checkbox" class="producto" id="antical" value="Antical">
+					</label>
+					
+					<label for="balleta">Balleta
+						<input type="checkbox" class="producto" id="balleta" value="Balleta">
+					</label>
+					
+					<label for="bolsa-basura">Bolsa basura
+						<input type="checkbox" class="producto" id="bolsa-basura" value="Bolsa basura">
+					</label>
+					
+					<label for="detergente">Detergente
+						<input type="checkbox" class="producto" id="detergente" value="Detergente">
+					</label>
+					
+					<label for="escobon">Escobón
+						<input type="checkbox" class="producto" id="escobon" value="Escobón">
+					</label>
+					
+					<label for="fairy">Fairy
+						<input type="checkbox" class="producto" id="fairy" value="Fairy">
+					</label>
+					
+					<label for="film">Film transparente
+						<input type="checkbox" class="producto" id="film" value="Film transparente">
+					</label>
+					
+					<label for="flis">Flis insectos
+						<input type="checkbox" class="producto" id="flis" value="Flis insectos">
+					</label>
+					
+					<label for="friegasuelos">Friegasuelos
+						<input type="checkbox" class="producto" id="friegasuelos" value="Friegasuelos">
+					</label>
+					
+					<label for="higienico">Papel higiénico
+						<input type="checkbox" class="producto" id="higienico" value="Papel higiénico">
+					</label>
+					
+					<label for="lejia">Lejía
+						<input type="checkbox" class="producto" id="lejia" value="Lejía">
+					</label>
+					
+					<label for="limpiacristales">Limpiacristales
+						<input type="checkbox" class="producto" id="limpiacristales" value="Limpiacristales">
+					</label>
+					
+					<label for="papel-aluminio">Papel aluminio
+						<input type="checkbox" class="producto" id="papel-aluminio" value="Papel aluminio">
+					</label>
+					
+					<label for="papel-vegetal">Papel vegetal
+						<input type="checkbox" class="producto" id="papel-vegetal" value="Papel vegetal">
+					</label>
+					
+					<label for="pañuelos">Pañuelos
+						<input type="checkbox" class="producto" id="pañuelos" value="Pañuelos">
+					</label>
+					
+					<label for="quitagrasa">Quita-grasas
+						<input type="checkbox" class="producto" id="quitagrasa" value="Quita-grasas">
+					</label>
+					
+					<label for="servilletas">Servilletas
+						<input type="checkbox" class="producto" id="servilletas" value="Servilletas">
+					</label>
+					
+					<label for="suavizante">Suavizante
+						<input type="checkbox" class="producto" id="suavizante" value="Suavizante">
+					</label>
+					
+					<label for="toallitas">Toallitas
+						<input type="checkbox" class="producto" id="toallitas" value="Toallitas">
+					</label>								
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<section class="dropdown">
+			<button class="dropdown-btn">💁 Cuidado personal <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
 
-							<label for="avecrem">Avecrem
-								<input type="checkbox" class="producto" id="avecrem" value="avecrem">
-							</label>
+				<div class="dropdown-content">
+					<label for="after">After shave
+						<input type="checkbox" class="producto" id="after" value="After shave">
+					</label>
+					
+					<label for="bastoncillos">Bastoncillos
+						<input type="checkbox" class="producto" id="bastoncillos" value="Bastoncillos">
+					</label>
+					
+					<label for="cacao-labial">Cacao labial
+						<input type="checkbox" class="producto" id="cacao-labial" value="Cacao labial">
+					</label>
+					
+					<label for="cera">Cera
+						<input type="checkbox" class="producto" id="cera" value="Cera">
+					</label>
+					
+					<label for="champu">Champú
+						<input type="checkbox" class="producto" id="champu" value="Champú">
+					</label>
+					
+					<label for="colageno">Colágeno
+						<input type="checkbox" class="producto" id="colageno" value="Colágeno">
+					</label>
+					
+					<label for="compresa-maxi">Compresas maxi
+						<input type="checkbox" class="producto" id="compresa-maxi" value="Compresas maxi">
+					</label>
+					
+					<label for="compresa-normal">Compresa normal
+						<input type="checkbox" class="producto" id="compresa-normal" value="Compresa normal">
+					</label>
+					
+					<label for="crema-cuerpo">Crema corporal
+						<input type="checkbox" class="producto" id="crema-cuerpo" value="Crema corporal">
+					</label>
+					
+					<label for="crema-manos">Crema de manos
+						<input type="checkbox" class="producto" id="crema-manos" value="Crema de manos">
+					</label>
+					
+					<label for="crema-solar">Crema solar
+						<input type="checkbox" class="producto" id="crema-solar" value="Crema solar">
+					</label>
+					
+					<label for="desodorante">Desodorante
+						<input type="checkbox" class="producto" id="desodorante" value="Desodorante">
+					</label>
+					
+					<label for="enjuague-bucal">Enjuague bucal
+						<input type="checkbox" class="producto" id="enjuague-bucal" value="Enjuague bucal">
+					</label>
+					
+					<label for="afeitar">Espuma afeitar
+						<input type="checkbox" class="producto" id="afeitar" value="Espuma afeitar">
+					</label>
+					
+					<label for="espuma-rizos">Espuma rizos
+						<input type="checkbox" class="producto" id="espuma-rizos" value="Espuma rizos">
+					</label>
+					
+					<label for="gel">Gel
+						<input type="checkbox" class="producto" id="gel" value="Gel">
+					</label>
+					
+					<label for="pasta-dientes">Pasta de dientes
+						<input type="checkbox" class="producto" id="pasta-dientes" value="Pasta de dientes">
+					</label>
+					
+					<label for="suavizante-pelo">Suavizante
+						<input type="checkbox" class="producto" id="suavizante-pelo" value="Suavizante">
+					</label>
+				</div>
+		</section>
+<!---------------------------------------------------------->
+		<button id="generar-lista">Generar lista</button>
+	</main>
 
-							<label for="atun">Atún
-								<input type="checkbox" class="producto" id="atun" value="atun">
-							</label>
-							
-							<label for="bacalao">Bacalao
-								<input type="checkbox" class="producto" id="bacalao" value="bacalao">
-							</label>
-							
-							<label for="boquerones">Boquerones
-								<input type="checkbox" class="producto" id="boquerones" value="boquerones">
-							</label>
-							
-							<label for="calamar">Calamar
-								<input type="checkbox" class="producto" id="calamar" value="calamar">
-							</label>
-							
-							<label for="dorada">Dorada
-								<input type="checkbox" class="producto" id="dorada" value="dorada">
-							</label>
-							
-							<label for="gamba">Gamba
-								<input type="checkbox" class="producto" id="gamba" value="gamba">
-							</label>
-							
-							<label for="gulas">Gulas
-								<input type="checkbox" class="producto" id="gulas" value="gulas">
-							</label>
-							
-							<label for="mejillon">Mejillones
-								<input type="checkbox" class="producto" id="mejillon" value="mejillon">
-							</label>
-
-							<label for="maiz">Maiz
-								<input type="checkbox" class="producto" id="maiz" value="maiz">
-							</label>
-							
-							<label for="merluza">Merluza
-								<input type="checkbox" class="producto" id="merluza" value="merluza">
-							</label>
-							
-							<label for="muslito-surimi">Muslito surimi
-								<input type="checkbox" class="producto" id="muslito-surimi" value="muslito-surimi">
-							</label>
-							
-							<label for="prep-paella">Preparado paella
-								<input type="checkbox" class="producto" id="prep-paella" value="prep-paella">
-							</label>
-							
-							<label for="pulpo">Pulpo
-								<input type="checkbox" class="producto" id="pulpo" value="pulpo">
-							</label>
-
-							<label for="surimi">Palito de mar
-								<input type="checkbox" class="producto" id="surimi" value="surimi">
-							</label>
-							
-							<label for="salmon">Salmón
-								<input type="checkbox" class="producto" id="salmon" value="salmon">
-							</label>
-							<label for="sopa-sobre">Sopa sobre
-								<input type="checkbox" class="producto" id="sopa-sobre" value="sopa-sobre">
-							</label>
-							
-							<label for="sardina">Sardina
-								<input type="checkbox" class="producto" id="sardina" value="sardina">
-							</label>
-							
-							<label for="sepia">Sepia
-								<input type="checkbox" class="producto" id="sepia" value="sepia">
-							</label>						
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🥐 Panadería, pastelería, cereales y galletas <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
-
-						<div class="dropdown-content">
-							<label for="azucar">Azúcar
-								<input type="checkbox" class="producto" id="azucar" value="azucar">
-							</label>
-							
-							<label for="avena">Avena
-								<input type="checkbox" class="producto" id="avena" value="avena">
-							</label>
-							
-							<label for="bimbo">Bimbo
-								<input type="checkbox" class="producto" id="bimbo" value="bimbo">
-							</label>
-							
-							<label for="bizcocho">Bizcocho
-								<input type="checkbox" class="producto" id="bizcocho" value="bizcocho">
-							</label>
-							
-							<label for="burrito">Tortilla burrito
-								<input type="checkbox" class="producto" id="burrito" value="burrito">
-							</label>
-							
-							<label for="cereales">Cereales
-								<input type="checkbox" class="producto" id="cereales" value="cereales">
-							</label>
-							
-							<label for="choco-fundir">Chocolate fundir
-								<input type="checkbox" class="producto" id="choco-fundir" value="choco-fundir">
-							</label>
-							
-							<label for="coco-rallado">Coco rallado
-								<input type="checkbox" class="producto" id="coco-rallado" value="coco-rallado">
-							</label>
-							
-							<label for="empanadilla">Emapandilla
-								<input type="checkbox" class="producto" id="empanadilla" value="empanadilla">
-							</label>
-							
-							<label for="flan">Flan
-								<input type="checkbox" class="producto" id="flan" value="flan">
-							</label>
-							
-							<label for="galletas">Galletas
-								<input type="checkbox" class="producto" id="galletas" value="galletas">
-							</label>
-							
-							<label for="harina">Harina
-								<input type="checkbox" class="producto" id="harina" value="harina">
-							</label>
-							
-							<label for="harina-fritos">Harina fritos
-								<input type="checkbox" class="producto" id="harina-fritos" value="harina-fritos">
-							</label>
-							
-							<label for="levadura">Levadura
-								<input type="checkbox" class="producto" id="levadura" value="levadura">
-							</label>
-							
-							<label for="maizena">Maizena
-								<input type="checkbox" class="producto" id="maizena" value="maizena">
-							</label>
-							
-							<label for="miel">Miel
-								<input type="checkbox" class="producto" id="miel" value="miel">
-							</label>
-							
-							<label for="pan">Pan
-								<input type="checkbox" class="producto" id="pan" value="pan">
-							</label>
-
-							<label for="pizza">Pizza
-								<input type="checkbox" class="producto" id="pizza" value="pizza">
-							</label>
-							
-							<label for="palmeritas">Palmeritas
-								<input type="checkbox" class="producto" id="palmeritas" value="palmeritas">
-							</label>
-							
-							<label for="pastas">Pastas
-								<input type="checkbox" class="producto" id="pastas" value="pastas">
-							</label>
-							
-							<label for="rallado">Pan rallado
-								<input type="checkbox" class="producto" id="rallado" value="rallado">
-							</label>
-							
-							<label for="saladitos">Saladitos
-								<input type="checkbox" class="producto" id="saladitos" value="saladitos">
-							</label>
-							
-							<label for="vainilla">Aroma vainilla
-								<input type="checkbox" class="producto" id="vainilla" value="vainilla">
-							</label>						
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🍮 Yogures, huevos, leche y mantequilla <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
-
-						<div class="dropdown-content">
-							<label for="bifidus">Bifidus
-								<input type="checkbox" class="producto" id="bifidus" value="bifidus">
-							</label>
-							
-							<label for="desnatado">Desnatado
-								<input type="checkbox" class="producto" id="desnatado" value="desnatado">
-							</label>
-							
-							<label for="flan-danone">Flan
-								<input type="checkbox" class="producto" id="flan-danone" value="flan-danone">
-							</label>
-							
-							<label for="gelatina">Gelatina
-								<input type="checkbox" class="producto" id="gelatina" value="gelatina">
-							</label>
-							
-							<label for="griego">Griego
-								<input type="checkbox" class="producto" id="griego" value="griego">
-							</label>
-							
-							<label for="huevos">Huevos
-								<input type="checkbox" class="producto" id="huevos" value="huevos">
-							</label>
-							
-							<label for="leche">Leche
-								<input type="checkbox" class="producto" id="leche" value="leche">
-							</label>
-							
-							<label for="mantequilla">Mantequilla
-								<input type="checkbox" class="producto" id="mantequilla" value="mantequilla">
-							</label>
-							
-							<label for="muesli">Muesli
-								<input type="checkbox" class="producto" id="muesli" value="muesli">
-							</label>
-							
-							<label for="natural">Natural
-								<input type="checkbox" class="producto" id="natural" value="natural">
-							</label>
-							
-							<label for="natillas">Natillas
-								<input type="checkbox" class="producto" id="natillas" value="natillas">
-							</label>
-							
-							<label for="panacota">Pannacotta
-								<input type="checkbox" class="producto" id="panacota" value="panacota">
-							</label>
-							
-							<label for="yogur-batido">Yogur batido
-								<input type="checkbox" class="producto" id="yogur-batido" value="yogur-batido">
-							</label>
-							
-							<label for="yogur-sabores">Yogur sabores
-								<input type="checkbox" class="producto" id="yogur-sabores" value="yogur-sabores">
-							</label>						
-						</div>
-				</section> 
-	<!---------------------------------------------------------->
-				<section class="dropdown">
-					<button class="dropdown-btn">🧹 Limpieza <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
-
-						<div class="dropdown-content">
-							<label for="ambientador">Ambientador
-								<input type="checkbox" class="producto" id="ambientador" value="ambientador">
-							</label>
-							
-							<label for="antical">Antical
-								<input type="checkbox" class="producto" id="antical" value="antical">
-							</label>
-							
-							<label for="balleta">Balleta
-								<input type="checkbox" class="producto" id="balleta" value="balleta">
-							</label>
-							
-							<label for="bolsa-basura">Bolsa basura
-								<input type="checkbox" class="producto" id="bolsa-basura" value="bolsa-basura">
-							</label>
-							
-							<label for="detergente">Detergente
-								<input type="checkbox" class="producto" id="detergente" value="detergente">
-							</label>
-							
-							<label for="escobon">Escobón
-								<input type="checkbox" class="producto" id="escobon" value="escobon">
-							</label>
-							
-							<label for="fairy">Fairy
-								<input type="checkbox" class="producto" id="fairy" value="fairy">
-							</label>
-							
-							<label for="film">Film transparente
-								<input type="checkbox" class="producto" id="film" value="film">
-							</label>
-							
-							<label for="flis">Flis insectos
-								<input type="checkbox" class="producto" id="flis" value="flis">
-							</label>
-							
-							<label for="friegasuelos">Friegasuelos
-								<input type="checkbox" class="producto" id="friegasuelos" value="friegasuelos">
-							</label>
-							
-							<label for="higienico">Papel higiénico
-								<input type="checkbox" class="producto" id="higienico" value="higienico">
-							</label>
-							
-							<label for="lejia">Lejía
-								<input type="checkbox" class="producto" id="lejia" value="lejia">
-							</label>
-							
-							<label for="limpiacristales">Limpiacristales
-								<input type="checkbox" class="producto" id="limpiacristales" value="limpiacristales">
-							</label>
-							
-							<label for="papel-aluminio">Papel aluminio
-								<input type="checkbox" class="producto" id="papel-aluminio" value="papel-aluminio">
-							</label>
-							
-							<label for="papel-vegetal">Papel vegetal
-								<input type="checkbox" class="producto" id="papel-vegetal" value="papel-vegetal">
-							</label>
-							
-							<label for="pañuelos">Pañuelos
-								<input type="checkbox" class="producto" id="pañuelos" value="pañuelos">
-							</label>
-							
-							<label for="quitagrasa">Quita-grasas
-								<input type="checkbox" class="producto" id="quitagrasa" value="quitagrasa">
-							</label>
-							
-							<label for="servilletas">Servilletas
-								<input type="checkbox" class="producto" id="servilletas" value="servilletas">
-							</label>
-							
-							<label for="suavizante">Suavizante
-								<input type="checkbox" class="producto" id="suavizante" value="suavizante">
-							</label>
-							
-							<label for="toallitas">Toallitas
-								<input type="checkbox" class="producto" id="toallitas" value="toallitas">
-							</label>			
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<section class="dropdown lastdropdown">
-					<button class="dropdown-btn">💁 Cuidado personal <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
-
-						<div class="dropdown-content">
-							<label for="after">After shave
-								<input type="checkbox" class="producto" id="after" value="after">
-							</label>
-							
-							<label for="bastoncillos">Bastoncillos
-								<input type="checkbox" class="producto" id="bastoncillos" value="bastoncillos">
-							</label>
-							
-							<label for="cacao-labial">Cacao labial
-								<input type="checkbox" class="producto" id="cacao-labial" value="cacao-labial">
-							</label>
-							
-							<label for="cera">Cera
-								<input type="checkbox" class="producto" id="cera" value="cera">
-							</label>
-							
-							<label for="champu">Champú
-								<input type="checkbox" class="producto" id="champu" value="champu">
-							</label>
-							
-							<label for="colageno">Colágeno
-								<input type="checkbox" class="producto" id="colageno" value="colageno">
-							</label>
-							
-							<label for="compresa-maxi">Compresas maxi
-								<input type="checkbox" class="producto" id="compresa-maxi" value="compresa-maxi">
-							</label>
-							
-							<label for="compresa-normal">Compresa normal
-								<input type="checkbox" class="producto" id="compresa-normal" value="compresa-normal">
-							</label>
-							
-							<label for="crema-cuerpo">Crema corporal
-								<input type="checkbox" class="producto" id="crema-cuerpo" value="crema-cuerpo">
-							</label>
-							
-							<label for="crema-manos">Crema de manos
-								<input type="checkbox" class="producto" id="crema-manos" value="crema-manos">
-							</label>
-							
-							<label for="crema-solar">Crema solar
-								<input type="checkbox" class="producto" id="crema-solar" value="crema-solar">
-							</label>
-							
-							<label for="desodorante">Desodorante
-								<input type="checkbox" class="producto" id="desodorante" value="desodorante">
-							</label>
-							
-							<label for="enjuague-bucal">Enjuague bucal
-								<input type="checkbox" class="producto" id="enjuague-bucal" value="enjuague-bucal">
-							</label>
-
-							<label for="afeitar">Espuma afeitar
-								<input type="checkbox" class="producto" id="afeitar" value="afeitar">
-							</label>
-							
-							<label for="espuma-rizos">Espuma rizos
-								<input type="checkbox" class="producto" id="espuma-rizos" value="espuma-rizos">
-							</label>
-							
-							<label for="gel">Gel
-								<input type="checkbox" class="producto" id="gel" value="gel">
-							</label>
-							
-							<label for="pasta-dientes">Pasta de dientes
-								<input type="checkbox" class="producto" id="pasta-dientes" value="pasta-dientes">
-							</label>
-							
-							<label for="suavizante-pelo">Suavizante
-								<input type="checkbox" class="producto" id="suavizante-pelo" value="suavizante-pelo">
-							</label>
-							
-						</div>
-				</section>
-	<!---------------------------------------------------------->
-				<button id="generar-lista">Generar lista</button>
-			</main>
-
-			<script src="./js/script.js" defer></script>
-		</body>
-	</html>
-
-
-
-
-	<!-- <section class="dropdown">
-		<button class="dropdown-btn">Picoteo <img src="/assets/svg/dropdown.svg" alt="flecha desplegable"></button>
-
-			<div class="dropdown-content">
-				<label for="">
-					<input type="checkbox" class="producto" id="" value="">
-				</label>						
-			</div>
-	</section> -->
+	<script src="./js/script.js" defer></script>
+</body>
+</html>
