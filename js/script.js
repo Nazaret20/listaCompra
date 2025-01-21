@@ -107,4 +107,76 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
+
+    //-----------------BUSCADOR DE PRODUCTOS-------------------
+    const buscador = document.getElementById('buscador');
+    const resultadosContainer = document.getElementById('resultados-busqueda');
+    const productos = Array.from(document.querySelectorAll('.dropdown-content label')).map(label => ({
+        nombre: label.textContent.trim(),
+        elemento: label
+    }));
+
+    buscador.addEventListener('input', function(e) {
+        const busqueda = e.target.value.toLowerCase().trim();
+        
+        if (busqueda === '') {
+            resultadosContainer.style.display = 'none';
+            return;
+        }
+
+        const resultados = productos.filter(producto => 
+            producto.nombre.toLowerCase().includes(busqueda)
+        );
+
+        if (resultados.length > 0) {
+            resultadosContainer.innerHTML = '';
+            resultados.forEach(producto => {
+                const div = document.createElement('div');
+                div.className = 'resultado-item';
+                div.textContent = producto.nombre;
+                
+                div.addEventListener('click', () => {
+                    // Buscar el dropdown padre
+                    const label = producto.elemento;
+                    const dropdown = label.closest('.dropdown');
+                    
+                    // Primero cerrar todos los dropdowns
+                    document.querySelectorAll('.dropdown').forEach(d => {
+                        d.classList.remove('active');
+                    });
+                    
+                    // Dar tiempo al DOM para actualizar
+                    setTimeout(() => {
+                        // Abrir el dropdown específico
+                        dropdown.classList.add('active');
+                        
+                        // Scroll suave después de abrir el dropdown
+                        setTimeout(() => {
+                            label.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }, 100);
+                    }, 0);
+                    
+                    // Limpiar búsqueda
+                    buscador.value = '';
+                    resultadosContainer.style.display = 'none';
+                });
+                
+                resultadosContainer.appendChild(div);
+            });
+            resultadosContainer.style.display = 'block';
+        } else {
+            resultadosContainer.innerHTML = '<div class="resultado-item">No se encontraron productos</div>';
+            resultadosContainer.style.display = 'block';
+        }
+    });
+
+    // Cerrar resultados al hacer clic fuera
+    document.addEventListener('click', function(e) {
+        if (!buscador.contains(e.target) && !resultadosContainer.contains(e.target)) {
+            resultadosContainer.style.display = 'none';
+        }
+    });
 });

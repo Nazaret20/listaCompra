@@ -22,7 +22,10 @@
 	</header>
 
 	<main>
-		<h2>Selecciona tus productos</h2>
+		<div class="busqueda-container">
+			<input type="text" id="buscador" placeholder="Buscar producto...">
+			<div id="resultados-busqueda" class="resultados-busqueda"></div>
+		</div>
 <!---------------------------------------------------------->
 		<section class="dropdown">
 			<button class="dropdown-btn">🍓 Frutas y verduras <img src="./assets/dropdown-arrow.svg" alt="flecha desplegable"></button>
@@ -668,10 +671,6 @@
 						<input type="checkbox" class="producto" id="empanadilla" value="Empanadilla">
 					</label>
 					
-					<label for="flan">Flan
-						<input type="checkbox" class="producto" id="flan" value="Flan">
-					</label>
-					
 					<label for="galletas">Galletas
 						<input type="checkbox" class="producto" id="galletas" value="Galletas">
 					</label>
@@ -955,8 +954,8 @@
 					</label>
 				</div>
 		</section>
-<!---------------------------------------------------------->
-		<button id="generar-lista">Generar lista</button>
+
+		<button id="generar-lista">Generar lista ✔️</button>
 	</main>
 
 	<script src="./js/script.js" defer></script>
