@@ -125,14 +125,14 @@ document.addEventListener("DOMContentLoaded", function () {
 	}));
 
 	buscador.addEventListener("input", function (e) {
-		const busqueda = normalizeText(e.target.value.toLowerCase().trim());
+		const busqueda = normalizeText(e.target.value.trim());
 
 		if (busqueda === "") {
 			resultadosContainer.style.display = "none";
 			return;
 		}
 
-		const resultados = productos.filter((producto) => normalizeText(producto.nombre.toLowerCase()).includes(busqueda));
+		const resultados = productos.filter((producto) => normalizeText(producto.nombre).includes(busqueda));
 
 		if (resultados.length > 0) {
 			resultadosContainer.innerHTML = "";
