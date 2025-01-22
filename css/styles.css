@@ -102,6 +102,7 @@ main {
 	max-height: 300px;
 	overflow-y: auto;
 	z-index: 1;
+	font-size: 1.7rem;
 }
 
 .resultado-item {
@@ -194,14 +195,14 @@ h2 {
 }
 
 .div-borrar-lista {
-	width: 60%;
-	margin: 0 auto;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 }
 
 .lista-nueva {
+	display: block;
 	text-align: center;
+	margin: 0 auto;
 }
 
 .productos-seleccionados {
@@ -229,5 +230,17 @@ h2 {
 		height: 100%;
 		max-width: 100rem;
 		margin: 0 auto;
+	}
+	.div-borrar-lista {
+		width: 60%;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.lista-nueva {
+		height: 4.7rem;
+		margin-top: 1rem;
 	}
 }

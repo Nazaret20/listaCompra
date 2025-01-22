@@ -110,20 +110,29 @@ document.addEventListener("DOMContentLoaded", function () {
 	//-----------------BUSCADOR DE PRODUCTOS-------------------
 	const buscador = document.getElementById("buscador");
 	const resultadosContainer = document.getElementById("resultados-busqueda");
+
+	// Función para normalizar texto (quitar tildes y convertir a minúsculas)
+	const normalizeText = (text) => {
+		return text
+			.toLowerCase()
+			.normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "");
+	};
+
 	const productos = Array.from(document.querySelectorAll(".dropdown-content label")).map((label) => ({
 		nombre: label.textContent.trim(),
 		elemento: label,
 	}));
 
 	buscador.addEventListener("input", function (e) {
-		const busqueda = e.target.value.toLowerCase().trim();
+		const busqueda = normalizeText(e.target.value.toLowerCase().trim());
 
 		if (busqueda === "") {
 			resultadosContainer.style.display = "none";
 			return;
 		}
 
-		const resultados = productos.filter((producto) => producto.nombre.toLowerCase().includes(busqueda));
+		const resultados = productos.filter((producto) => normalizeText(producto.nombre.toLowerCase()).includes(busqueda));
 
 		if (resultados.length > 0) {
 			resultadosContainer.innerHTML = "";
