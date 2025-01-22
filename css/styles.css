@@ -167,7 +167,7 @@ main {
 	width: 1.6rem;
 }
 
-#generar-lista {
+#generar-lista, .borrar-lista, .lista-nueva {
 	width: 20rem;
 	margin: 0 auto;
 	padding: 1rem;
@@ -193,18 +193,15 @@ h2 {
 	background-color: rgba(144, 238, 144, 0.541);
 }
 
-.borrar-lista {
-	width: 20rem;
+.div-borrar-lista {
+	width: 60%;
 	margin: 0 auto;
-	padding: 1rem;
-	background-color: #7acee760;
-	font-size: 1.7rem;
-	font-family: "Source Sans 3", serif;
-	border: 1px solid rgb(180, 180, 180);
-	border-radius: 3rem;
-	margin-bottom: 4rem;
-	margin-top: 1rem;
-	cursor: pointer;
+	display: flex;
+	justify-content: center;
+}
+
+.lista-nueva {
+	text-align: center;
 }
 
 .productos-seleccionados {
