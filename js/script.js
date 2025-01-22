@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	// ---PRODUCTOS SELECCIONADOS DESDE LOCALSTORAGE----
 	// Primero seleccionamos el elemento ul donde mostraremos los productos
 	const listaProductosElement = document.querySelector(".lista-productos");
-	const borrarListaBtn = document.querySelector(".borrar-lista");
 
 	// Solo ejecutar este código si estamos en la página de lista de productos
 	if (listaProductosElement) {
@@ -98,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		mostrarProductos();
 
 		// ------------------BORRAR LA LISTA------------------
+		const borrarListaBtn = document.querySelector(".borrar-lista");
 		if (borrarListaBtn) {
 			borrarListaBtn.addEventListener("click", function () {
 				localStorage.removeItem("productosSeleccionados");
