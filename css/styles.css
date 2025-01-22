@@ -16,6 +16,7 @@ body {
 	max-width: 100%;
 }
 
+/*------------------HEADER-------------------*/
 header {
 	height: 8rem;
 	display: grid;
@@ -104,12 +105,12 @@ main {
 }
 
 .resultado-item {
-    padding: 10px 15px;
-    cursor: pointer;
+	padding: 10px 15px;
+	cursor: pointer;
 }
 
 .resultado-item:hover {
-    background-color: #f5f5f5;
+	background-color: #f5f5f5;
 }
 
 /*-------------------DROPDOWN-----------------*/
