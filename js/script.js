@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// -------GUARDAR PRODUCTOS SELECCIONADOS EN LA LISTA--------
 	const generarListaBtn = document.getElementById("generar-lista");
+	const añadirProductosBtn = document.getElementById("añadir-productos");
+
 	if (generarListaBtn) {
 		generarListaBtn.addEventListener("click", function () {
 			const checkboxes = document.querySelectorAll(".producto");
@@ -58,6 +60,42 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
+
+	// Nuevo botón para añadir productos
+    if (añadirProductosBtn) {
+        añadirProductosBtn.addEventListener("click", function () {
+            const checkboxes = document.querySelectorAll(".producto");
+
+            // Obtener productos existentes del localStorage
+            let existingProducts = [];
+            try {
+                const stored = localStorage.getItem("productosSeleccionados");
+                if (stored) {
+                    existingProducts = JSON.parse(stored);
+                }
+            } catch (error) {
+                console.error("Error al cargar productos existentes:", error);
+            }
+
+            // Añade productos al array
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    // Solo añadir si el producto no está ya en la lista
+                    if (!existingProducts.includes(checkbox.value)) {
+                        existingProducts.push(checkbox.value);
+                    }
+                }
+            });
+
+            // Guardar lista actualizada
+            if (existingProducts.length > 0) {
+                localStorage.setItem("productosSeleccionados", JSON.stringify(existingProducts));
+                alert("Productos añadidos con éxito.");
+            } else {
+                alert("Selecciona al menos un producto nuevo.");
+            }
+        });
+    }
 
 	// ---PRODUCTOS SELECCIONADOS DESDE LOCALSTORAGE----
 	// Primero seleccionamos el elemento ul donde mostraremos los productos

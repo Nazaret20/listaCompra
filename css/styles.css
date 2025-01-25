@@ -1,3 +1,4 @@
+/*--------Media query 420px--------*/
 * {
 	margin: 0;
 	padding: 0;
@@ -122,6 +123,10 @@ main {
 	border-top: 1px solid grey;
 }
 
+.dropdown:last-of-type {
+	border-bottom: 1px solid grey;
+}
+
 .dropdown-btn {
 	width: 100%;
 	padding: 1.5rem;
@@ -168,21 +173,34 @@ main {
 	width: 1.6rem;
 }
 
-#generar-lista, .borrar-lista, .lista-nueva {
+#generar-lista, .borrar-lista, .lista-nueva, #añadir-productos {
 	width: 20rem;
-	margin: 0 auto;
 	padding: 1rem;
+	margin: 0 auto;
 	background-color: #7acee760;
 	font-size: 1.7rem;
 	font-family: "Source Sans 3", serif;
 	border: 1px solid rgb(180, 180, 180);
 	border-radius: 3rem;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+}
+
+a.lista-nueva {
+	display: block;
 	margin-top: 1rem;
 }
 
 #generar-lista:active {
 	background-color: #2d5e6da2;
+}
+
+.div-hacer-lista, .div-borrar-lista {
+	width: 90%;
+	margin: 2rem auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 /* --------PÁGINA DE PRODUCTOS SELECCIONADOS (LISTA)------ */
@@ -194,15 +212,11 @@ h2 {
 	background-color: rgba(144, 238, 144, 0.541);
 }
 
-.div-borrar-lista {
-	display: flex;
-	flex-direction: column;
-}
-
-.lista-nueva {
+a.lista-nueva {
 	display: block;
 	text-align: center;
 	margin: 0 auto;
+	margin-bottom: 1rem;
 }
 
 .productos-seleccionados {
@@ -222,6 +236,10 @@ h2 {
 	border-top: 1px solid grey;
 }
 
+.lista-productos li:last-child {
+	border-bottom: 1px solid grey;
+}
+
 /*-----------------MEDIA QUERY-------------------*/
 
 @media (min-width: 1024px) {
@@ -231,9 +249,9 @@ h2 {
 		max-width: 100rem;
 		margin: 0 auto;
 	}
-	.div-borrar-lista {
-		width: 60%;
-		margin: 0 auto;
+	.div-borrar-lista, .div-hacer-lista {
+		width: 80%;
+		margin: 2rem auto;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
