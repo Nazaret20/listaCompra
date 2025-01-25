@@ -184,11 +184,7 @@ main {
 	border-radius: 3rem;
 	margin-bottom: 2rem;
 	margin-top: 1rem;
-}
-
-a.lista-nueva {
-	display: block;
-	margin-top: 1rem;
+	text-align: center;
 }
 
 #generar-lista:active {
@@ -214,9 +210,10 @@ h2 {
 
 a.lista-nueva {
 	display: block;
-	text-align: center;
 	margin: 0 auto;
 	margin-bottom: 1rem;
+	width: auto;
+	padding: 1rem 3rem;
 }
 
 .productos-seleccionados {
@@ -258,7 +255,8 @@ a.lista-nueva {
 	}
 
 	.lista-nueva {
-		height: 4.7rem;
+		width: auto;
+		height: auto;
 		margin-top: 1rem;
 	}
 }
