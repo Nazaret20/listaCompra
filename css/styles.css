@@ -237,6 +237,32 @@ a.lista-nueva {
 	border-bottom: 1px solid grey;
 }
 
+/*----------------TACHAR PRODUCTOS-----------------*/
+.producto-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 0;
+	transition: background-color 0.2s;
+}
+
+.producto-item input[type="checkbox"] {
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	margin: 0;
+}
+
+.producto-item span {
+	font-size: 18px;
+	transition: all 0.3s ease;
+}
+
+.producto-item span.tachado {
+	text-decoration: line-through;
+	color: #888;
+}
+
 /*-----------------MEDIA QUERY-------------------*/
 
 @media (min-width: 1024px) {

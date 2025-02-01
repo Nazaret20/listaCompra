@@ -62,40 +62,40 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	// Nuevo botón para añadir productos
-    if (añadirProductosBtn) {
-        añadirProductosBtn.addEventListener("click", function () {
-            const checkboxes = document.querySelectorAll(".producto");
+	if (añadirProductosBtn) {
+		añadirProductosBtn.addEventListener("click", function () {
+			const checkboxes = document.querySelectorAll(".producto");
 
-            // Obtener productos existentes del localStorage
-            let existingProducts = [];
-            try {
-                const stored = localStorage.getItem("productosSeleccionados");
-                if (stored) {
-                    existingProducts = JSON.parse(stored);
-                }
-            } catch (error) {
-                console.error("Error al cargar productos existentes:", error);
-            }
+			// Obtener productos existentes del localStorage
+			let existingProducts = [];
+			try {
+				const stored = localStorage.getItem("productosSeleccionados");
+				if (stored) {
+					existingProducts = JSON.parse(stored);
+				}
+			} catch (error) {
+				console.error("Error al cargar productos existentes:", error);
+			}
 
-            // Añade productos al array
-            checkboxes.forEach(function (checkbox) {
-                if (checkbox.checked) {
-                    // Solo añadir si el producto no está ya en la lista
-                    if (!existingProducts.includes(checkbox.value)) {
-                        existingProducts.push(checkbox.value);
-                    }
-                }
-            });
+			// Añade productos al array
+			checkboxes.forEach(function (checkbox) {
+				if (checkbox.checked) {
+					// Solo añadir si el producto no está ya en la lista
+					if (!existingProducts.includes(checkbox.value)) {
+						existingProducts.push(checkbox.value);
+					}
+				}
+			});
 
-            // Guardar lista actualizada
-            if (existingProducts.length > 0) {
-                localStorage.setItem("productosSeleccionados", JSON.stringify(existingProducts));
-                alert("Productos añadidos con éxito.");
-            } else {
-                alert("Selecciona al menos un producto nuevo.");
-            }
-        });
-    }
+			// Guardar lista actualizada
+			if (existingProducts.length > 0) {
+				localStorage.setItem("productosSeleccionados", JSON.stringify(existingProducts));
+				alert("Productos añadidos con éxito.");
+			} else {
+				alert("Selecciona al menos un producto nuevo.");
+			}
+		});
+	}
 
 	// ---PRODUCTOS SELECCIONADOS DESDE LOCALSTORAGE----
 	// Primero seleccionamos el elemento ul donde mostraremos los productos
@@ -103,25 +103,97 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Solo ejecutar este código si estamos en la página de lista de productos
 	if (listaProductosElement) {
-		// Función para actualizar la lista
+		// Delegación de eventos en el ul padre
+		listaProductosElement.addEventListener("click", function (event) {
+			// Encontrar el li más cercano al elemento clickeado
+			const li = event.target.closest("li");
+
+			// Si no se encontró un li o es el mensaje de "no hay productos", salir
+			if (!li || !li.querySelector(".producto-item")) return;
+
+			// Obtener los elementos relevantes
+			const checkbox = li.querySelector("input[type='checkbox']");
+			const textoProducto = li.querySelector("span");
+			const producto = textoProducto.textContent;
+
+			// Toggle del estado
+			let productosComprados = [];
+			try {
+				const stored = localStorage.getItem("productosComprados");
+				if (stored) {
+					productosComprados = JSON.parse(stored);
+				}
+			} catch (error) {
+				console.error("Error al cargar productos comprados:", error);
+			}
+
+			// Si el click fue directamente en el checkbox, no necesitamos cambiarlo
+			if (event.target.type !== "checkbox") {
+				checkbox.checked = !checkbox.checked;
+			}
+
+			if (checkbox.checked) {
+				if (!productosComprados.includes(producto)) {
+					productosComprados.push(producto);
+				}
+				textoProducto.style.textDecoration = "line-through";
+				textoProducto.style.color = "#888";
+			} else {
+				const index = productosComprados.indexOf(producto);
+				if (index > -1) {
+					productosComprados.splice(index, 1);
+				}
+				textoProducto.style.textDecoration = "none";
+				textoProducto.style.color = "";
+			}
+
+			localStorage.setItem("productosComprados", JSON.stringify(productosComprados));
+		});
+
 		function mostrarProductos() {
-			listaProductosElement.innerHTML = ""; // Limpiar la lista
+			listaProductosElement.innerHTML = "";
 
 			let productos = [];
+			let productosComprados = [];
 			try {
 				const stored = localStorage.getItem("productosSeleccionados");
+				const storedComprados = localStorage.getItem("productosComprados");
 				if (stored) {
 					productos = JSON.parse(stored);
+				}
+				if (storedComprados) {
+					productosComprados = JSON.parse(storedComprados);
 				}
 			} catch (error) {
 				console.error("Error al cargar productos:", error);
 			}
 
-			//Crear li para cada producto que se añade
 			if (productos && productos.length > 0) {
 				productos.forEach(function (producto) {
 					const li = document.createElement("li");
-					li.textContent = producto;
+					li.style.cursor = "pointer"; // Hacer todo el li clicable
+
+					const productoContainer = document.createElement("div");
+					productoContainer.className = "producto-item";
+					productoContainer.style.display = "flex";
+					productoContainer.style.alignItems = "center";
+					productoContainer.style.gap = "10px";
+
+					const checkbox = document.createElement("input");
+					checkbox.type = "checkbox";
+					checkbox.checked = productosComprados.includes(producto);
+
+					const textoProducto = document.createElement("span");
+					textoProducto.textContent = producto;
+
+					if (productosComprados.includes(producto)) {
+						textoProducto.style.textDecoration = "line-through";
+						textoProducto.style.color = "#888";
+					}
+
+					productoContainer.appendChild(checkbox);
+					productoContainer.appendChild(textoProducto);
+					li.appendChild(productoContainer);
 					listaProductosElement.appendChild(li);
 				});
 			} else {
@@ -131,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 
-		// Mostrar productos al cargar la página
 		mostrarProductos();
 
 		// ------------------BORRAR LA LISTA------------------
@@ -139,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		if (borrarListaBtn) {
 			borrarListaBtn.addEventListener("click", function () {
 				localStorage.removeItem("productosSeleccionados");
-				// Actualizar la lista después de borrar
+				localStorage.removeItem("productosComprados"); // Borrar también los productos comprados
 				mostrarProductos();
 			});
 		}
